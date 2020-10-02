@@ -1,6 +1,8 @@
 import React from "react";
 import Axios from 'axios';
 import {config} from "../../config";
+import {Link} from "react-router-dom";
+
 
 const Home = () => {
   const [list, setList] = React.useState([]);
@@ -36,7 +38,10 @@ const getList = async() =>{
               <tr key={list.id}>
                 <td>{index+1}</td>
                 <td>
-                  <button className="btn btn-primary">Button</button>
+                  <Link to={`DetailUser/${list.id}`}>
+                    {/* <button className="btn btn-primary">Details</button> */}
+                    <p className="btn btn-primary">Details</p>
+                  </Link>
                 </td>
                 <td>
                   <img className="rounded-circle" src={list.avatar} alt=""/>
